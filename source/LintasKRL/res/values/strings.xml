@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Pilih Stasiun saat ini anda berada dan data akan muncul dibawah.</string>
+    <string name="no_station_selected">Pilih stasiun dulu</string>
     <string name="app_name">Pantum</string>
     <string name="station_prompt">Pilih Stasiun:</string>
+    <string name="no_data">Tabel posisi KRL akan muncul disini, pilih salah satu stasiun untuk melihatnya.</string>
 
     <string-array name="station_arrays">
         <item>Pilih stasiun anda</item>
@@ -68,5 +69,9 @@
         <item>Universitasindonesia</item>
         <item>Universitaspancasila</item>
     </string-array>
+
+    <string name="title_activity_map_view">MapViewActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

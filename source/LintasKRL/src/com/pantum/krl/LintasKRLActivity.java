@@ -2,17 +2,20 @@ package com.pantum.krl;
 
 import java.util.HashMap;
 
-import com.akirayjin.lintaskrl.R;
-
-import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class LintasKRLActivity extends Activity {
 	/** Called when the activity is first created. */
@@ -20,17 +23,30 @@ public class LintasKRLActivity extends Activity {
 	Spinner stationSpinner;
 	HashMap<String, String> map;
 	LinearLayout opening;
+	TextView stationName;
+	Context activity;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		opening = (LinearLayout)findViewById(R.id.opening);
+		stationName = (TextView)findViewById(R.id.text);
 		createMapForStationCode();
+		activity = this.getApplicationContext();
 		setWebViewLayout();
 		addListenerOnSpinnerItemSelection();
 		//String firstStation = stationSpinner.getItemAtPosition(0).toString();
 		//wv.loadUrl("http://infoka.krl.co.id/to/"+firstStation);
+		ImageView starIcon = (ImageView)findViewById(R.id.star_icon);
+		starIcon.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(activity, MapViewActivity.class);
+				startActivity(i); 
+			}
+		});
 	}
 
 	private void setWebViewLayout(){

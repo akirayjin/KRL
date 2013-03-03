@@ -22,10 +22,12 @@ public class CustomOnItemSelectedListener implements OnItemSelectedListener {
 				context.wv.setVisibility(View.VISIBLE);
 				context.opening.setVisibility(View.GONE);
 				context.wv.loadUrl("http://infoka.krl.co.id/to/"+currentKey);
+				context.stationName.setText(currentStation);
 				isFound = true;
 			}else{
 				context.wv.setVisibility(View.GONE);
 				context.opening.setVisibility(View.VISIBLE);
+				context.stationName.setText(R.string.no_station_selected);
 			}
 		}
 	}
