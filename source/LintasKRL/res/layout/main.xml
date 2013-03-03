@@ -8,22 +8,35 @@
         android:id="@+id/text"
         android:layout_width="fill_parent"
         android:layout_height="0dip"
-        android:text="@string/hello" 
         android:layout_weight=".1"
-        android:gravity="center"/>
-    
+        android:gravity="center"
+        android:text="@string/hello" />
+
     <Spinner
         android:id="@+id/station_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:prompt="@string/station_prompt" />
 
     <WebView
         android:id="@+id/webview"
         android:layout_width="fill_parent"
         android:layout_height="0dip"
-        android:layout_weight=".9" />
-    
+        android:layout_weight=".9"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/opening"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight=".9" >
+
+        <TextView
+            android:id="@+id/opening_text"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="Data akan muncul disini" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -4,12 +4,14 @@ import java.util.HashMap;
 
 import com.akirayjin.lintaskrl.R;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 public class LintasKRLActivity extends Activity {
@@ -17,16 +19,18 @@ public class LintasKRLActivity extends Activity {
 	WebView wv;
 	Spinner stationSpinner;
 	HashMap<String, String> map;
+	LinearLayout opening;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		opening = (LinearLayout)findViewById(R.id.opening);
 		createMapForStationCode();
 		setWebViewLayout();
 		addListenerOnSpinnerItemSelection();
-		String firstStation = stationSpinner.getItemAtPosition(0).toString();
-		wv.loadUrl("http://infoka.krl.co.id/to/"+firstStation);
+		//String firstStation = stationSpinner.getItemAtPosition(0).toString();
+		//wv.loadUrl("http://infoka.krl.co.id/to/"+firstStation);
 	}
 
 	private void setWebViewLayout(){

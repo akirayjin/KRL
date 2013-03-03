@@ -14,13 +14,18 @@ public class CustomOnItemSelectedListener implements OnItemSelectedListener {
 	
 	public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
 		String currentStation = parent.getItemAtPosition(pos).toString();
-		Log.i(this.toString(), context.map.toString()+" "+currentStation);
+
 		boolean isFound = false;
 		for (int i = 0; i < context.map.size() && !isFound; i++) {
 			String currentKey = context.map.get(currentStation);
 			if(currentKey != null){
+				context.wv.setVisibility(View.VISIBLE);
+				context.opening.setVisibility(View.GONE);
 				context.wv.loadUrl("http://infoka.krl.co.id/to/"+currentKey);
 				isFound = true;
+			}else{
+				context.wv.setVisibility(View.GONE);
+				context.opening.setVisibility(View.VISIBLE);
 			}
 		}
 	}

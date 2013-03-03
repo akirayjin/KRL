@@ -6,9 +6,10 @@
     <string name="station_prompt">Pilih Stasiun:</string>
 
     <string-array name="station_arrays">
+        <item>Pilih stasiun anda</item>
         <item>Ancol</item>
         <item>Angke</item>
-        <item>Batu Ceper</item>
+        <item>Batuceper</item>
         <item>Bekasi</item>
         <item>Bogor</item>
         <item>Bojonggede</item>
